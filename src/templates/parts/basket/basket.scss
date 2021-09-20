@@ -1,0 +1,65 @@
+.basket {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	transition: transform 0.24s ease-in-out;
+	border-left: 1px solid #cfcfcf;
+	background: #fff;
+	width: 410px;
+	height: 100%;
+
+	@include max-screen(768px) {
+		transform: translate3d(100%, 0, 0);
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 1;
+
+		&.active {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	&__section {
+		padding: 40px;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid #cfcfcf;
+		}
+	}
+
+	&__title {
+		margin-bottom: 30px;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 21px;
+	}
+
+	&__inner {
+		@include flex(row, nowrap, space-between, center);
+
+		width: 100%;
+		margin-bottom: 15px;
+		font-weight: 400;
+		font-size: 14px;
+	}
+
+	#total {
+		@include flex(row, nowrap, space-between, center);
+		width: 100%;
+		font-weight: 700;
+		font-size: 18px;
+	}
+
+	&__form {
+		@include flex(row, nowrap, space-between, center);
+
+		width: 100%;
+	}
+
+	&__input {
+		flex: 1 0 auto;
+		width: auto;
+		margin-right: 10px;
+	}
+}

@@ -1,0 +1,37 @@
+<div class="header">
+	<div class="header__container">
+			<a href="/" class="header__logo">
+			{{ icon({
+				iconName: 'logo',
+				className: 'header__icon',
+				attributes: ''
+			}) }}
+			</a>
+		{{ menu() }}
+		<div class="header__section">
+			<button class="header__button" type="button">
+				{{ icon({
+					iconName: 'search',
+					className: 'header__icon',
+					attributes: ''
+				}) }}
+			</button>
+
+			<button class="header__button header__button--basket" type="button">
+				<span class="header__counter"> {{ cards | length }}</span>
+				{{ icon({
+					iconName: 'basket',
+					className: 'header__icon',
+					attributes: ''
+				}) }}
+			</button>
+			<button class="header__button header__button--burger" type="button">
+				{{ icon({
+					iconName: 'burger',
+					className: 'header__icon',
+					attributes: ''
+				}) }}
+			</button>
+		</div>
+	</div>
+</div>

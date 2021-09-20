@@ -1,0 +1,47 @@
+{% from "../../../components/card/card.nunj" import card %}
+
+<sidebar class="basket">
+{% if cards | length %}
+  <div class="basket__section basket__section--cards">
+      <h3 class="basket__title">My basket</h3>
+      {% for item in cards %}
+          {{ card(item) }}
+      {% endfor %}
+  </div>
+  {% endif %}
+  <div class="basket__section">
+    <h3 class="basket__title">Promo code</h3>
+
+    <form class="basket__form">
+      {{ field({
+				className: 'basket__input',
+				placeholder: 'Placeholder Text'
+			}) }}
+      {{ button({
+				className: 'basket__submit',
+				children: 'Apply',
+				type: 'submit'
+			}) }}
+    </form>
+  </div>
+  <div class="basket__section">
+   <div id="subtotal" class="basket__inner ">
+      <p>Subtotal</p>
+      <p class="basket__price">$<span> </span></p>
+    </div>
+   <div class="basket__inner">
+      <p>Tax</p>
+      <p class="basket__price">$<span>100</span></p>
+    </div>
+    <div class="basket__inner">
+      <p>Shipping</p>
+      <p class="basket__price">$<span>150</span></p>
+    </div>
+    <div id="total"  class="basket__inner">
+      <p>Total:</p>
+      <p>$<span></span></p>
+    </div>
+  </div>
+</sidebar>
+<script type='text/javascript'>
+</script>

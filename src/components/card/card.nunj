@@ -1,0 +1,42 @@
+{% from "../../components/icon/icon.nunj" import icon %}
+
+{% macro card(props) %}
+	<div class="card" data-price="{{ props.price }}">
+		<button class="card__close" type="button">
+			{{ icon({
+						iconName: 'close',
+						className: '',
+						attributes: 'viewBox="0 0 19 19"'
+					}) }}
+		</button>
+		<img class="card__img" src='./assets/images/{{ props.img}}' alt="Some image" />
+		<div class="card__info">
+			<a href="/" class="card__title">
+				{{ props.title}}
+			</a>
+			<div class="card__section">
+				<div class="card__counter">
+					<button class="card__button card__button--decrease" type="button">
+					{{ icon({
+						iconName: 'decrease',
+						className: '',
+						attributes: 'viewBox="0 0 21 21"'
+					}) }}
+					</button>
+					<div class="card__cnt">1</div>
+					<button class="card__button card__button--increase" type="button">
+						{{ icon({
+							iconName: 'increase',
+							className: '',
+							attributes: 'viewBox="0 0 21 21"'
+						}) }}
+					</button>
+				</div>
+				<div class="card__price">{{ props.prefix}} <p>{{ props.price}}</p></div>
+			</div>
+		</div>
+	</div>
+<script type='text/javascript'>
+
+</script>
+{% endmacro %}

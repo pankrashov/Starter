@@ -1,0 +1,26 @@
+<div class="path">
+	<div class="path__item active">
+		<div class="path__counter">
+			<span>1</span>
+			<p class="path__caption">Account</p>
+		</div>
+	</div>
+	<div class="path__item active">
+		<div class="path__counter">
+			<span>2</span>
+		<p class="path__caption">Account</p>
+		</div>
+	</div>
+	<div class="path__item currren">
+		<div class="path__counter">
+			<span>3</span>
+		<p class="path__caption">Account</p>
+		</div>
+	</div>
+	<div class="path__item">
+		<div class="path__counter">
+			<span>4</span>
+		<p class="path__caption">Account</p>
+		</div>
+	</div>
+</div>

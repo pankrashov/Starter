@@ -1,0 +1,17 @@
+.wrapper {
+	@include flex(column, nowrap, flex-start, flex-start);
+	position: relative;
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+.container {
+	@include flex(row, nowrap, space-between, flex-start);
+
+	position: relative;
+	min-width: 768px;
+	width: 100%;
+	// margin: auto;
+	box-sizing: content-box;
+	flex: 1 0 auto;
+}

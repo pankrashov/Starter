@@ -1,0 +1,14 @@
+{% from "../../components/icon/icon.nunj" import icon %}
+{% macro menu(active=false) %}
+	<nav class="menu">
+		{% for item in menuItems %}
+			<a href="{{ item.path }}" class="menu__item">{{ item.name }}</a>
+		{% endfor %}
+	<button class="menu__close" type="button">
+	{{ icon({
+			iconName: 'close',
+			attributes: 'viewBox="0 0 19 19"'
+		}) }}
+	</<button>
+	</nav>
+{% endmacro %}

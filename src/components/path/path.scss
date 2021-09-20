@@ -1,0 +1,84 @@
+.path {
+	@include flex(row, wrap, space-between, center);
+	width: 100%;
+	margin-bottom: 85px;
+
+	&__item {
+		@include flex(row, nowrap, center, center);
+		position: relative;
+		flex: 1 0 auto;
+
+		&:not(:last-child) {
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 1px;
+				background-color: #cfcfcf;
+			}
+		}
+
+		span {
+			color: #cfcfcf;
+		}
+
+		&:first-child {
+			@include flex(row, nowrap, flex-start, center);
+		}
+
+		&:last-child {
+			@include flex(row, nowrap, flex-end, center);
+
+			flex: none;
+		}
+
+		&.active {
+			&::after {
+				background-color: $color-blue;
+			}
+			.path__counter {
+				border: 1px solid $color-blue;
+				background-color: $color-blue;
+
+				span {
+					color: #fff;
+				}
+			}
+		}
+
+		&.currren {
+			.path__counter {
+				border: 1px solid $color-blue;
+
+				span {
+					color: #000;
+				}
+			}
+		}
+	}
+
+	&__counter {
+		@include flex(row, wrap, center, center);
+
+		position: relative;
+		z-index: 1;
+		border: 1px solid #cfcfcf;
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+		// background: #fff;
+	}
+
+	&__path {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	&__caption {
+		transform: translate3d(-50%, 0, 0);
+		position: absolute;
+		left: 50%;
+		bottom: -30px;
+	}
+}

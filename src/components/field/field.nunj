@@ -1,0 +1,9 @@
+{% macro field(props) %}
+<label class="field {% if props.className %} {{ props.className }}{% endif %}">
+	{% if props.caption%} 
+		<div class="field__caption">{{props.caption}}</div>
+	{% endif %}
+	<input required type="{% if props.type %}{{ props.type }}{% endif %}" placeholder="{% if props.placeholder %} {{ props.placeholder }}{% endif %}">
+	</label>
+{% endmacro %}
+

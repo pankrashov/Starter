@@ -1,0 +1,95 @@
+<form class="form">
+  {% include '../../../components/path/path.nunj' %}
+  <div class="form__container">
+    <h3 class="form__title">
+        Billing ingormation
+    </h3>
+  <div class="form__tab">
+    <label class="form__radio">
+      <input type="radio" name="payment" style="display: none;" />
+      <span></span>
+      <p>Pay with Credit Card</p>
+    </label>
+    <label class="form__radio">
+      <input type="radio" name="payment" style="display: none;" />
+      <span></span>
+				{{ icon({
+					iconName: 'payPal',
+          attributes: 'style="width: 85px;height: 24px;"'
+				}) }}
+    </label>
+    </div>
+  <div class="form__section">
+    <div class="form__inner">
+      {{ field({
+          placeholder: 'Placeholder Text',
+          caption: 'Name on card'
+        }) }}
+      </div>
+      <div class="form__inner">
+        <div class="form__input">
+          {{ field({
+            caption: 'Card number',
+            type: 'number'
+        }) }}
+        </div>
+        <div class="form__input">
+          {{ field({
+            type: 'number'
+        }) }}
+        </div>
+        <div class="form__input">
+          {{ field({
+            type: 'number'
+        }) }}
+        </div>
+        <div class="form__input">
+          {{ field({
+            type: 'number'
+        }) }}
+        </div>
+      </div>
+      <div class="form__inner">
+       <div class="form__input">
+          {{ field({
+            caption: 'Expire date',
+            type: 'date'
+          }) }}
+        </div>
+         <div class="form__input">
+          {{ field({
+            caption: 'CVV code',
+            type: 'password'
+          }) }}
+        </div>
+      </div>
+  </div>
+  <div>
+    <label class="form__checkbox">
+      <input type="checkbox" name="" style="display: none;" />
+      <span></span>
+      <p>Save information of this credit card</p>
+    </label>
+  </div>
+  <div>
+    <label class="form__checkbox">
+      <input type="checkbox" name="" style="display: none;" />
+      <span></span>
+      <p>I accept <a href="/" target="_blank">terms and comditions</a> and the <a href="/" target="_blank">Privacy Policies</a></p>
+    </label>
+  </div>
+  <div style="display: flex;justify-content: space-between;">
+      {{ button({
+				className: 'form__back',
+				children: 'Back',
+				type: 'button'
+			}) }}
+      {{ button({
+				className: 'form__submit',
+				children: 'Check Out',
+				type: 'submit'
+			}) }}
+  </div>
+  </div>
+
+</form>

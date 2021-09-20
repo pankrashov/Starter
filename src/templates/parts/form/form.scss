@@ -1,0 +1,161 @@
+.form {
+	position: relative;
+	display: block;
+	flex: 1 1 auto;
+	padding: 40px;
+
+	&__container {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 630px;
+	}
+
+	&__title {
+		margin-bottom: 40px;
+		font-size: 18px;
+	}
+
+	&__section {
+		margin-bottom: 40px;
+		margin-left: -30px;
+		border: 1px solid #cfcfcf;
+		border-radius: 5px;
+		padding: 20px 30px;
+		box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.19);
+		background: #fff;
+	}
+
+	&__inner {
+		@include flex(row, nowrap, flex-start, flex-end);
+		margin-bottom: 20px;
+	}
+
+	&__input {
+		width: calc(25% - 22px);
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+
+	&__tab {
+		margin-bottom: 45px;
+	}
+
+	&__back {
+		border: 1px solid #cfcfcf;
+		border-radius: 3px;
+		color: #000;
+		background: #fff;
+
+		@include desktop-hover {
+			color: #fff;
+			background: #cfcfcf;
+		}
+	}
+
+	&__checkbox {
+		@include flex(row, nowrap, space-between, center);
+		display: inline-flex;
+		margin-bottom: 15px;
+		cursor: pointer;
+
+		p {
+			color: #8c8c8c;
+			transition: color 0.24s ease-out;
+		}
+
+		input:checked ~ span {
+			&::before {
+				transform: translate3d(-50%, -50%, 0) scale(1);
+			}
+		}
+
+		a {
+			color: #000;
+
+			@include desktop-hover {
+				text-decoration: underline;
+			}
+		}
+		span {
+			position: relative;
+			display: inline-block;
+			flex: 0 0 18px;
+			margin-right: 15px;
+			border: 1px solid #cfcfcf;
+			width: 18px;
+			height: 18px;
+			background: #fff;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				display: block;
+				width: 8px;
+				height: 8px;
+				background: $color-blue;
+				transform: translate3d(-50%, -50%, 0) scale(0);
+				transition: transform 0.24s ease-out;
+			}
+		}
+
+		@include desktop-hover {
+			p {
+				color: $color-blue;
+			}
+		}
+	}
+	&__radio {
+		@include flex(row, nowrap, space-between, center);
+		display: inline-flex;
+		cursor: pointer;
+
+		&:not(:last-child) {
+			margin-right: 82px;
+		}
+
+		p {
+			transition: color 0.24s ease-out;
+		}
+
+		span {
+			position: relative;
+			display: inline-block;
+			flex: 0 0 18px;
+			margin-right: 15px;
+			border: 1px solid #cfcfcf;
+			border-radius: 50%;
+			width: 18px;
+			height: 18px;
+			background: #fff;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				display: block;
+				border-radius: 50%;
+				width: 8px;
+				height: 8px;
+				background: $color-blue;
+				transform: translate3d(-50%, -50%, 0) scale(0);
+				transition: transform 0.24s ease-out;
+			}
+		}
+
+		input:checked ~ span {
+			&::before {
+				transform: translate3d(-50%, -50%, 0) scale(1);
+			}
+		}
+
+		@include desktop-hover {
+			p {
+				color: $color-blue;
+			}
+		}
+	}
+}
